@@ -9,7 +9,7 @@ func main() {
 	ch := make(chan *PurchaseOrder)
 	go SavePO(po,ch)
 	newPo := <- ch
-	fmt.Printf("PO: %v",newPo)
+	fmt.Printf("PO: %v %T",newPo,newPo)
 }
 
 //PurchaseOrder struct

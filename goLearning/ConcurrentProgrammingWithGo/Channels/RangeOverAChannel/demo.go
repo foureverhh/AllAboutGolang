@@ -16,16 +16,18 @@ func main() {
 	}
 
 	close(ch) //Only close the sender!!
-
-	/* 	for {
+	/* 	
+	for msg := range ch {
+		fmt.Printf(msg + " ")
+	} 
+	*/
+	for {
 		if msg, ok := <-ch; ok {
 			fmt.Printf(msg + " ")
 		} else {
 			break
 		}
-	} */
+	} 
 
-	for msg := range ch {
-		fmt.Printf(msg + " ")
-	}
+
 }
